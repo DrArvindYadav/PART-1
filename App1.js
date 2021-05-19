@@ -1,5 +1,4 @@
-
-// in this exercise we modify the variable definition of App component using array of object
+// use of object which contains elements as array of object as well as variable  
 import React from 'react'
 
 const Header = (props) => {
@@ -37,32 +36,34 @@ const Total = (props) => {
   )
 }
 
-/*Here we using the an array of objects. name of array is parts
-which contain three objects.*/
+/* here inside the App component we put the course name and its part
+in a single object which name is course.*/
 const App = () => {
 
-  const course = 'Half Stack application development'
-  const parts = [
-    {
-      name: 'Fundamentals of React',
-      exercises: 10
-    },
-    {
-      name: 'Using props to pass data',
-      exercises: 7
-    },
-    {
-      name: 'State of a component',
-      exercises: 14
-    }
-  ]
+  const course = {
+    name: 'Half Stack application development',
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ]
+  }
 
 
   return (
     <div>
-      <Header course={course} />
-      <Content parts={parts} />
-      <Total parts={parts} />
+      <Header course={course.name} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
     </div>
   )
 }
